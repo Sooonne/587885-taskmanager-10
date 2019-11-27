@@ -5,16 +5,15 @@ const render = (container, template, place) => {
 };
 
 const siteMenuTemplate = () => {
-return `<section class="main__control control container">
-<h1 class="control__title">TASKMANAGER</h1>
-<section class="control__btn-wrap">
-  <input
-    type="radio"
-    name="control"
-    id="control__new-task"
-    class="control__input visually-hidden"
-  />
-  <label for="control__new-task" class="control__label control__label--new-task"
+  return `<section class="main__control control container">
+    <h1 class="control__title">TASKMANAGER</h1>
+      <section class="control__btn-wrap">
+        <input
+          type="radio"
+          name="control"
+          id="control__new-task"
+          class="control__input visually-hidden"/>
+          <label for="control__new-task" class="control__label control__label--new-task"
     >+ ADD NEW TASK</label
   >
   <input
@@ -32,15 +31,14 @@ return `<section class="main__control control container">
     class="control__input visually-hidden"
   />
   <label for="control__statistic" class="control__label"
-    >STATISTICS</label
-  >
-</section>
+    >STATISTICS</label>
+  </section>
 </section>`;
 };
 
 
 const filterTemplate = () => {
-  return `      <section class="main__filter filter container">
+  return `<section class="main__filter filter container">
   <input
     type="radio"
     id="filter__all"
@@ -450,7 +448,7 @@ const taskTemplate = () => {
 </article>`;
 };
 
-const LoadMoreButtonTemplate = () => {
+const loadMoreButtonTemplate = () => {
   return `<button class="load-more" type="button">load more</button>`;
 };
 
@@ -470,7 +468,4 @@ render(taskListElement, taskEditTemplate(), `beforeend`);
 
 new Array(TASK_COUNT).fill(``).forEach(() => render(taskListElement, taskTemplate(), `beforeend`));
 
-render(boardElement, LoadMoreButtonTemplate(), `beforeend`);
-
-
-
+render(boardElement, loadMoreButtonTemplate(), `beforeend`);
