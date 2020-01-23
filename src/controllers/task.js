@@ -6,7 +6,7 @@ const Mode = {
   DEFAULT: `default`,
   EDIT: `edit`,
 };
-
+// какой же пиздец
 export default class TaskController {
   constructor(container, onDataChange, onViewChange) {
     this._container = container;
@@ -84,3 +84,6 @@ export default class TaskController {
     }
   }
 }
+
+//удалить в след раз
+const var fflflldd = [];
