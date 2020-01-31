@@ -6,28 +6,32 @@ export const SortType = {
   DEFAULT: `default`,
 };
 
-const createSortingTemplate = () => {
+const createSortTemplate = () => {
   return (
     `<div class="board__filter-list">
-    <a href="#" data-sort-type="${SortType.DEFAULT}" class="board__filter">SORT BY DEFAULT</a>
-    <a href="#" data-sort-type="${SortType.DATE_UP}" class="board__filter">SORT BY DATE up</a>
-    <a href="#" data-sort-type="${SortType.DATE_DOWN}" class="board__filter">SORT BY DATE down</a>
+      <a href="#" data-sort-type="${SortType.DEFAULT}" class="board__filter">SORT BY DEFAULT</a>
+      <a href="#" data-sort-type="${SortType.DATE_UP}" class="board__filter">SORT BY DATE up</a>
+      <a href="#" data-sort-type="${SortType.DATE_DOWN}" class="board__filter">SORT BY DATE down</a>
     </div>`
   );
 };
 
+
 export default class Sort extends AbstractComponent {
   constructor() {
     super();
-    this._currentTypeSort = SortType.DEFAULT;
+
+    this._currenSortType = SortType.DEFAULT;
   }
+
   getTemplate() {
-    return createSortingTemplate();
+    return createSortTemplate();
   }
 
   setSortTypeChangeHandler(handler) {
     this.getElement().addEventListener(`click`, (evt) => {
       evt.preventDefault();
+
       if (evt.target.tagName !== `A`) {
         return;
       }
@@ -41,7 +45,6 @@ export default class Sort extends AbstractComponent {
       this._currenSortType = sortType;
 
       handler(this._currenSortType);
-
     });
   }
 }
